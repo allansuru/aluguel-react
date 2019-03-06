@@ -7,7 +7,7 @@ export class RentalList extends Component {
 		super();
 
 		this.state = {
-			rentals: [1,2,3]
+			rentals: [1,2,3,4,5,6]
 		}
 	}
 
@@ -19,6 +19,15 @@ export class RentalList extends Component {
 		})
 	}
 
+	addRental() {
+		const rentals = this.state.rentals;
+		rentals.push(1);
+
+		this.setState({
+			rentals
+		})
+	}
+
 	render () {
 		return (
 			       <section id='rentalListing'>
@@ -26,6 +35,7 @@ export class RentalList extends Component {
             <div className='row'>
 							{ this.renderRentals() }
             </div>
+						{/* <button onClick={() => { this.addRental() }}>Add Rental!</button> */}
           </section>
 		)
 	}
