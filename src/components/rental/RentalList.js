@@ -12,9 +12,9 @@ export class RentalList extends Component {
 	}
 
 	renderRentals() {
-		return this.state.rentals.map(rental => {
+		return this.state.rentals.map((rental, i) => {
 			return(
-				  <RentalCard />
+				  <RentalCard key={i} colNum='col-md-3 col-xs-6' />
 			)
 		})
 	}
