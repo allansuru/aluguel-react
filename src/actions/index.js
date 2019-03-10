@@ -1,7 +1,7 @@
 import * as types from './types';
 
 const rentals = [{
-		id: 1,
+		id: "1",
 		title: "Central Apartment",
 		city: "New York",
 		street: "Times Sqaure",
@@ -14,7 +14,7 @@ const rentals = [{
 		createdAt: "24/12/2017"
 	},
 	{
-		id: 2,
+		id: "2",
 		title: "Central Apartment 2",
 		city: "San Francisco",
 		street: "Main street",
@@ -27,7 +27,7 @@ const rentals = [{
 		createdAt: "24/12/2017"
 	},
 	{
-		id: 3,
+		id: "3",
 		title: "Central Apartment 3",
 		city: "Bratislava",
 		street: "Hlavna",
@@ -40,7 +40,7 @@ const rentals = [{
 		createdAt: "24/12/2017"
 	},
 	{
-		id: 4,
+		id: "4",
 		title: "Central Apartment 4",
 		city: "Berlin",
 		street: "Haupt strasse",
@@ -60,5 +60,15 @@ export const fetchRentals = () => {
 	return {
 		type: types.FETCH_RENTALS,
 		rentals
+	}
+}
+
+export const fetchRentalById = (rentalId) => {
+
+	const rental = rentals.find(r => r.id === rentalId);
+		debugger
+	return {
+		type: types.FETCH_RENTAL_BY_ID,
+		rental
 	}
 }
