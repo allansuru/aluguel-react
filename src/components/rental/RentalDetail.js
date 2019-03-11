@@ -13,7 +13,7 @@ class RentalDetail extends Component {
 
   render() {
     const { rental } = this.props;
-debugger
+
     if (rental.id) {
       return (
         <section id='rentalDetails'>

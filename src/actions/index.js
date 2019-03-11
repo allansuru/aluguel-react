@@ -63,12 +63,20 @@ export const fetchRentals = () => {
 	}
 }
 
-export const fetchRentalById = (rentalId) => {
 
-	const rental = rentals.find(r => r.id === rentalId);
-		debugger
-	return {
-		type: types.FETCH_RENTAL_BY_ID,
-		rental
+export const fetchRentalById = (rentalId) => {	
+// SEND REQUEST TO SEVER, ASYNC CODE // simulando server
+	return function (dispatch) {	
+		setTimeout(() => {
+			const rental = rentals.find(r => r.id === rentalId);
+			dispatch(fetchRentalByIdSuccess(rental))
+	}, 1000);
 	}
+}
+
+ const fetchRentalByIdSuccess = (rental) => {
+	 return {
+		 type: types.FETCH_RENTAL_BY_ID_SUCCESS,
+		 rental
+	 }
 }
