@@ -27,7 +27,7 @@ import * as action from '../../actions';
 	}
 
 	componentWillMount() {
-		debugger
+
 		this.props.dispatch(action.fetchRentals());
 	}
 
