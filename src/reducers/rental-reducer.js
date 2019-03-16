@@ -23,8 +23,10 @@ export const rentalReducer = (state = INITIAL_STATE.rentals, action) => {
 
 export const selectedRentalReducer = (state = INITIAL_STATE.rental, action) => {
 	switch(action.type) {
+		case types.FETCH_RENTAL_BY_ID_INIT:
+			return {...state, data: {}};
 		case types.FETCH_RENTAL_BY_ID_SUCCESS:
-			return {...state, data: action.rental  }
+			return {...state, data: action.rental};
 
 			default:
 				return state;

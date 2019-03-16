@@ -53,8 +53,19 @@ const rentals = [{
 		createdAt: "24/12/2017"
 	}];
 
+export const fetchRentalByIdInit = () => {
+	debugger
+	return {
+		type: types.FETCH_RENTAL_BY_ID_INIT
+	}
+}
 
-
+ const fetchRentalByIdSuccess = (rental) => {
+	 return {
+		 type: types.FETCH_RENTAL_BY_ID_SUCCESS,
+		 rental
+	 }
+}
 
 export const fetchRentals = () => {
 	return {
@@ -66,7 +77,8 @@ export const fetchRentals = () => {
 
 export const fetchRentalById = (rentalId) => {	
 // SEND REQUEST TO SEVER, ASYNC CODE // simulando server
-	return function (dispatch) {	
+	return function (dispatch) {
+		dispatch(fetchRentalByIdInit())
 		setTimeout(() => {
 			const rental = rentals.find(r => r.id === rentalId);
 			dispatch(fetchRentalByIdSuccess(rental))
@@ -74,9 +86,3 @@ export const fetchRentalById = (rentalId) => {
 	}
 }
 
- const fetchRentalByIdSuccess = (rental) => {
-	 return {
-		 type: types.FETCH_RENTAL_BY_ID_SUCCESS,
-		 rental
-	 }
-}
